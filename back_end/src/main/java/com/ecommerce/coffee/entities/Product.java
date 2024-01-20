@@ -36,7 +36,7 @@ public class Product {
 
     private boolean isActive;
 
-    @Column(name = "units_in_stocks", nullable = false)
+    @Column(name = "units_in_stock", nullable = false)
     private int unitsInStock;
 
     @Column(name = "production_date")
