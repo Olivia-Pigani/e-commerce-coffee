@@ -1,13 +1,17 @@
 package com.ecommerce.coffee.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
 
-import java.util.ArrayList;
-import java.util.List;
+import java.util.HashSet;
+import java.util.Set;
 
 @Entity
-@Data
+//@Data => cause bugs
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "categories")
 public class Category {
 
@@ -19,7 +23,7 @@ public class Category {
     @Column(nullable = false)
     private String name;
 
-    @OneToMany
-    private List<Product> productList = new ArrayList<>();
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "category")
+    private Set<Product> productList = new HashSet<>();
 
 }

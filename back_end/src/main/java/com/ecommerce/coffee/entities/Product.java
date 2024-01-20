@@ -1,12 +1,18 @@
 package com.ecommerce.coffee.entities;
 
 import jakarta.persistence.*;
-import lombok.Data;
+import lombok.*;
+import org.hibernate.annotations.CreationTimestamp;
+import org.hibernate.annotations.UpdateTimestamp;
 
 import java.util.Date;
 
 @Entity
-@Data
+//@Data => cause bugs
+@Getter
+@Setter
+@NoArgsConstructor
+@AllArgsConstructor
 @Table(name = "products")
 public class Product {
 
@@ -34,12 +40,15 @@ public class Product {
     private int unitsInStock;
 
     @Column(name = "production_date")
+    @CreationTimestamp
     private Date productionDate;
 
     @Column(name = "updated_date")
+    @UpdateTimestamp
     private Date updatedDate;
 
     @ManyToOne
+    @JoinColumn(name = "categories_id", nullable = false)
     private Category category;
 
 
