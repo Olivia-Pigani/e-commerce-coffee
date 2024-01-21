@@ -21,7 +21,7 @@ public class Product {
     private Long id;
 
     @Column(nullable = false)
-    private String sku;
+    private String sku; // "stock keeping unit"
 
     @Column(nullable = false)
     private String name;

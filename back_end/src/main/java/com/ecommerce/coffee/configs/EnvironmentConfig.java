@@ -1,3 +1,4 @@
+/*Allow to link .env file to Spring App*/
 package com.ecommerce.coffee.configs;
 
 import org.springframework.context.annotation.Bean;
