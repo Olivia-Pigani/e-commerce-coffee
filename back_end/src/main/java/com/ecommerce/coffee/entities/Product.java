@@ -26,6 +26,7 @@ public class Product {
     @Column(nullable = false)
     private String name;
 
+    //@Transient
     private String description;
 
     @Column(name = "unit_price", nullable = false)
